@@ -1,0 +1,27 @@
+node_modules
+*node_modules
+*/node_modules
+/node_modules/
+node_modules/
+/node_modules
+node_modules
+
+# node_modules
+.node_modules
+./node_modules
+*node_modules
+
+
+.eslintrc.js
+./eslintrc.js
+*eslintrc.js
+*/package-lock.json
+*/package.json
+/package.json/
+
+/babel.config.js
+/babel.config.js/
+*/babel.config.js
+*babel.config.js
+
+*generate_main_files.sh
