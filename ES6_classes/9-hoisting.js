@@ -20,8 +20,8 @@ export class StudentHolberton {
     this._firstName = firstName;
     this._lastName = lastName;
     this._holbertonClass = holbertonClass;
-    this._year = holbertonClass.year
-    this._location = holbertonClass.location
+    this._year = holbertonClass.year;
+    this._location = holbertonClass.location;
   }
 
   get fullName() {
@@ -33,17 +33,17 @@ export class StudentHolberton {
   }
 
   get year(){
-    return this._holbertonClass.year
+    return this._holbertonClass.year;
   }
 
   get location(){
-    return this._holbertonClass.location
+    return this._holbertonClass.location;
   }
 
   get fullStudentDescription(){
     return (
       `${this._firstName} ${this._lastName} - ${this._year} - ${this._location}`
-    )
+    );
   }
 }
 const student1 = new StudentHolberton('Guillaume', 'Salva', class2020);
