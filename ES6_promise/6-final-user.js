@@ -1,9 +1,8 @@
-// A function named handleProfileSignup. accepts 3 arg 
-// firstName, lastName, and fileName. 
+// A function named handleProfileSignup. accepts 3 arg
+// firstName, lastName, and fileName.
 // The func should call the two other functions.
 // When the promises are all settled it should return
 // an array with the following structure:
-
 import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 
