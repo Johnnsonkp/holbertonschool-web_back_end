@@ -10,5 +10,8 @@ the floor of the float.
 
 
 def floor(n: float) -> int:
-    """Return floor of the float"""
-    return math.floor(n)
+    """type-annotated function floor"""
+    if n < 0:
+        n = n * -1
+    return int(n)
+
