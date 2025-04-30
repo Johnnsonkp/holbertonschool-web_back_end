@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-
-import math
-
 """
 Write a type-annotated function floor
 takes a float @n as arg and returns
@@ -14,4 +11,3 @@ def floor(n: float) -> int:
     if n < 0:
         n = n * -1
     return int(n)
-
