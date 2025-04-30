@@ -10,4 +10,5 @@ the floor of the float.
 
 
 def floor(n: float) -> int:
+    """Return floor of the float"""
     return math.floor(n)
