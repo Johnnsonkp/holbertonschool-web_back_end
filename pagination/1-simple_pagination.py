@@ -15,6 +15,7 @@ def index_range(page, page_size):
         end_index = start_index + page_size
         return start_index, end_index
 
+
 class Server:
     """Server class to paginate a database"""
     DATA_FILE = "Popular_Baby_Names.csv"
@@ -34,8 +35,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """ obtains the indexes and return corresponding pages """
-        assert type(page) == int and page > 0
-        assert type(page_size) == int and page_size > 0
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
         start, end = index_range(page, page_size)
         pages = []
         if start >= len(self.dataset()):
