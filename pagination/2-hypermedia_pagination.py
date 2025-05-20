@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-""" Hypermedia pagination """
+""" return a tuple of size two containing a start index and an end index
+        corresponding to the range of indexes to return in a list for those
+        particular pagination parameters. """
+
 import csv
 import math
 from typing import List, Dict, Any
 
 
 def index_range(page, page_size):
-    """ return a tuple of size two containing a start index and an end index
-        corresponding to the range of indexes to return in a list for those
-        particular pagination parameters. """
+    """ index_range(page, page_size) """
     if page and page_size:
         start_index = (page - 1) * page_size
         end_index = start_index + page_size
@@ -16,16 +17,14 @@ def index_range(page, page_size):
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
-    """
+    """Server class to paginate a database"""
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
-        """
+        """Cached dataset"""
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
@@ -36,8 +35,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """ obtains the indexes and return corresponding pages """
-        assert type(page) == int and page > 0
-        assert type(page_size) == int and page_size > 0
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
         start, end = index_range(page, page_size)
         pages = []
         if start >= len(self.dataset()):
@@ -47,8 +46,8 @@ class Server:
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
         """ returns a dictionary """
-        assert type(page) == int and page > 0
-        assert type(page_size) == int and page_size > 0
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
         total_pages = math.floor(len(self.dataset()) / page_size)
         return {'page_size': len(self.get_page(page, page_size)),
                 'page': page,
